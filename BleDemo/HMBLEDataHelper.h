@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, HmStatus) {
 @optional
 
 /**
- 状态(包含手机蓝牙和体脂秤的状态)
+ 状态(包含手机蓝牙和外设状态)
 
  @param bleDataHelper 助手
  @param statusInfo 状态码及信息
@@ -75,11 +75,11 @@ typedef NS_ENUM(NSInteger, HmStatus) {
 /**
  初始化蓝牙助手
 
- @param userid 当前用户id 方便体脂秤进行用户识别
+ @param userid 当前用户id 方便体外设进行用户识别
  @param sex 性别
  @param age 年龄 注:若age<18, 儿童少年的身体成分与成人差异较大,所测脂肪不具参考性
  @param height 身高 (0, 250] cm  
- @param unit 体脂秤单位
+ @param unit 外设单位
  @return 蓝牙助手
  */
 + (instancetype )hm_scanAndConnectScaleWithUserid:(NSString *)userid userSex:(HmSex)sex userAge:(NSUInteger)age userHeight:(CGFloat)height currentUnit:(HmScaleUnit)unit;
