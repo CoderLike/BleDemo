@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	LZCLog(@"test");
+
 }
 
 
