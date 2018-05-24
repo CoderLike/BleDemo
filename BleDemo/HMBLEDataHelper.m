@@ -4,7 +4,7 @@
 
 #import "HMBLEDataHelper.h"
 
-// 体脂秤
+
 #define HLHServiceUUID                 [CBUUID UUIDWithString:@"0783B03E-8535-B5A0-7140-A304D2495CB7"] // 服务的UUID
 #define HLHRWCharacteristicUUID        [CBUUID UUIDWithString:@"0783B03E-8535-B5A0-7140-A304D2495CBA"] // 写特征的UUID
 #define HLHRWNCharacteristicUUID       [CBUUID UUIDWithString:@"0783B03E-8535-B5A0-7140-A304D2495CB8"] // 通知特征的UUID
@@ -24,7 +24,7 @@
 
 /** 个人信息 */
 @property (nonatomic, copy) NSData *userData;
-/** 体脂秤发送的数据 */
+/** 发送的数据 */
 @property (nonatomic, copy) NSString *peripheralDataS;
 /** 扫描定时器 15秒*/
 @property (nonatomic, strong) NSTimer *timerToStopScanAndConnect;
@@ -215,7 +215,7 @@
             if (result == 0) {
 				
                 if ([self.delegate respondsToSelector:@selector(HMBLEDataHelper:statusInfo:)]) {
-                    [self.delegate HMBLEDataHelper:self statusInfo: @{@"HmStatus" : @"12",@"info" : @"手机蓝牙已成功连接上体脂秤"}];
+                    [self.delegate HMBLEDataHelper:self statusInfo: @{@"HmStatus" : @"12",@"info" : @"手机蓝牙已成功连接上外设"}];
                 }
             }
 			else if (result == 1) {
@@ -270,7 +270,7 @@
         case 2: // 测量完毕,未检测到脂肪
         case 3: // 测量完毕,检测到脂肪
         {
-            // 解析体脂秤测量数据
+            // 解析外设测量数据
 			
             if ([self.delegate respondsToSelector:@selector(HMBLEDataHelper:result:)]) {
 				[self.delegate HMBLEDataHelper:self result:@{@"key" : @"value"}];
