@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dcO-ss-ktz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="483"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="bGC-Oj-aZr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YEL-NZ-XV0"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数据展示" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSK-Cd-9CY">
+                                <rect key="frame" x="0.0" y="30" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IOW-wq-ERq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nz9-6D-9wy">
+                                <rect key="frame" x="50" y="609" width="275" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bcA-EE-m04"/>
+                                </constraints>
+                                <state key="normal" title="断开连接"/>
+                                <connections>
+                                    <action selector="disconnectBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="soe-mf-nx5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zge-ka-0iO">
+                                <rect key="frame" x="50" y="557" width="275" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="olV-NB-UGv"/>
+                                </constraints>
+                                <state key="normal" title="连接,上秤"/>
+                                <connections>
+                                    <action selector="goToScaleBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mPm-Wl-fXt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zge-ka-0iO" firstAttribute="trailing" secondItem="nz9-6D-9wy" secondAttribute="trailing" id="Cld-nF-7es"/>
+                            <constraint firstAttribute="bottom" secondItem="zge-ka-0iO" secondAttribute="bottom" constant="70" id="DGx-ko-WZ8"/>
+                            <constraint firstAttribute="trailing" secondItem="dcO-ss-ktz" secondAttribute="trailing" id="EIG-BX-h7j"/>
+                            <constraint firstItem="tSK-Cd-9CY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="G4g-Pp-Szl"/>
+                            <constraint firstItem="dcO-ss-ktz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q79-z7-nYx"/>
+                            <constraint firstItem="nz9-6D-9wy" firstAttribute="top" secondItem="zge-ka-0iO" secondAttribute="bottom" constant="12" id="Tze-DC-dbz"/>
+                            <constraint firstItem="dcO-ss-ktz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="VqZ-PP-fp0"/>
+                            <constraint firstItem="zge-ka-0iO" firstAttribute="top" secondItem="dcO-ss-ktz" secondAttribute="bottom" constant="10" id="ZSB-kX-AiG"/>
+                            <constraint firstItem="tSK-Cd-9CY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zkx-c7-ofr"/>
+                            <constraint firstItem="zge-ka-0iO" firstAttribute="leading" secondItem="nz9-6D-9wy" secondAttribute="leading" id="afa-lq-Auh"/>
+                            <constraint firstItem="tSK-Cd-9CY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bh7-s5-pWm"/>
+                            <constraint firstItem="zge-ka-0iO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="eaj-sf-IBo"/>
+                            <constraint firstItem="zge-ka-0iO" firstAttribute="centerX" secondItem="dcO-ss-ktz" secondAttribute="centerX" id="tqP-ed-zus"/>
+                            <constraint firstAttribute="trailing" secondItem="tSK-Cd-9CY" secondAttribute="trailing" id="vIM-Xa-rng"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dcO-ss-ktz" id="SGo-NV-Od0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
